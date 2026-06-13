@@ -1,0 +1,2 @@
+# ShopPluginMC
+demo hehe
