@@ -1,0 +1,21 @@
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# PocketMine-MP
+server-test/
+*.phar
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Composer (nếu có)
+vendor/
+composer.lock
+
+# Logs
+*.log

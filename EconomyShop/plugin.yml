@@ -1,0 +1,34 @@
+name: EconomyShop
+version: 1.0.0
+api: 5.0.0
+main: TanPhat\EconomyShop\Main
+description: Hệ thống shop kinh tế dạng rương cho MCPE 1.21
+
+author: Phat bel
+website: https://github.com/huynhletanphat
+
+commands:
+  shop:
+    description: Mở cửa hàng
+    permission: economyshop.use
+  sell:
+    description: Bán vật phẩm
+    permission: economyshop.use
+  money:
+    description: Xem tiền
+    permission: economyshop.use
+  pay:
+    description: Chuyển tiền
+    permission: economyshop.use
+  baltop:
+    description: Xem bảng xếp hạng tiền
+    permission: economyshop.use
+  shopadmin:
+    description: Quản lý shop
+    permission: economyshop.admin
+
+permissions:
+  economyshop.use:
+    default: true
+  economyshop.admin:
+    default: op
