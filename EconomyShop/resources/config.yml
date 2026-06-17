@@ -1,0 +1,11 @@
+# Đơn vị tiền tệ hiển thị
+currency-symbol: "xu"
+# Số tiền mặc định khi người chơi mới tham gia
+starting-money: 1000.0
+# Số dư tối đa (0 = không giới hạn)
+max-money: 10000000.0
+# Phí chuyển tiền (phần trăm, 0-100)
+pay-tax: 5.0
+# Số dòng hiển thị trong bảng xếp hạng /baltop
+baltop-limit: 10
+
