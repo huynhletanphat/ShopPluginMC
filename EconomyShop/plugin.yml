@@ -2,12 +2,34 @@ name: EconomyShop
 version: 1.0.0
 api: 5.0.0
 main: EconomyShop\Main
-description: Hệ thống shop kinh tế
+description: Hệ thống shop kinh tế cho MCPE 1.21
 author: Phat bel
+website: https://github.com/huynhletanphat
+
+softdepend:
+  - InvMenu
+
 commands:
   shop:
     description: Mở cửa hàng
     permission: economyshop.use
+  money:
+    description: Xem số dư
+    permission: economyshop.use
+    aliases: [balance, bal]
+  pay:
+    description: Chuyển tiền
+    permission: economyshop.use
+  baltop:
+    description: Bảng xếp hạng giàu có
+    permission: economyshop.use
+  sell:
+    description: Bán vật phẩm
+    permission: economyshop.use
+  shopadmin:
+    description: Quản lý shop
+    permission: economyshop.admin
+
 permissions:
   economyshop.use:
     default: true

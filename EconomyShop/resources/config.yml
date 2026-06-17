@@ -3,3 +3,8 @@ starting-money: 1000.0
 max-money: 10000000.0
 pay-tax: 5.0
 baltop-limit: 10
+
+scoreboard:
+  enabled: true
+  update-interval: 10
+  show-top: 5
