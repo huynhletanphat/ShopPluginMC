@@ -1,39 +1,27 @@
 <?php
-
 declare(strict_types=1);
-
 namespace EconomyShop\economy;
-
 use EconomyShop\database\EconomyDatabase;
 use pocketmine\player\Player;
-use pocketmine\Server;
-
 class EconomyManager {
-
     private EconomyDatabase $db;
-    private array $cache = []; // uuid => float
-    private float $startingMoney;
-    private float $maxMoney;
-    private float $payTax;
-
+    private array $cache = [];
+    private float $startingMoney, $maxMoney, $payTax;
     public function __construct(EconomyDatabase $db, array $config) {
         $this->db = $db;
         $this->startingMoney = (float) ($config["starting-money"] ?? 1000.0);
         $this->maxMoney = (float) ($config["max-money"] ?? 0);
         $this->payTax = (float) ($config["pay-tax"] ?? 0);
     }
-
     public function loadPlayer(Player $player): void {
         $uuid = $player->getUniqueId()->toString();
         $money = $this->db->getMoney($uuid);
         if ($money === 0.0 && $this->startingMoney > 0) {
-            // Người chơi mới: set tiền mặc định
             $this->db->setMoney($uuid, $this->startingMoney);
             $money = $this->startingMoney;
         }
         $this->cache[$uuid] = $money;
     }
-
     public function savePlayer(Player $player): void {
         $uuid = $player->getUniqueId()->toString();
         if (isset($this->cache[$uuid])) {
@@ -41,65 +29,33 @@ class EconomyManager {
             unset($this->cache[$uuid]);
         }
     }
-
     public function getMoney(Player $player): float {
         $uuid = $player->getUniqueId()->toString();
         return $this->cache[$uuid] ?? $this->db->getMoney($uuid);
     }
-
     public function setMoney(Player $player, float $amount): void {
         $uuid = $player->getUniqueId()->toString();
-        if ($this->maxMoney > 0 && $amount > $this->maxMoney) {
-            $amount = $this->maxMoney;
-        }
+        if ($this->maxMoney > 0 && $amount > $this->maxMoney) $amount = $this->maxMoney;
         $this->cache[$uuid] = $amount;
-        // Lưu ngay để an toàn
         $this->db->setMoney($uuid, $amount);
     }
-
-    public function addMoney(Player $player, float $amount): void {
-        $current = $this->getMoney($player);
-        $this->setMoney($player, $current + $amount);
-    }
-
+    public function addMoney(Player $player, float $amount): void { $this->setMoney($player, $this->getMoney($player) + $amount); }
     public function removeMoney(Player $player, float $amount): bool {
-        $current = $this->getMoney($player);
-        if ($current < $amount) return false;
-        $this->setMoney($player, $current - $amount);
+        if ($this->getMoney($player) < $amount) return false;
+        $this->setMoney($player, $this->getMoney($player) - $amount);
         return true;
     }
-
     public function pay(Player $sender, Player $receiver, float $amount): bool {
         if ($amount <= 0) return false;
         $tax = $amount * ($this->payTax / 100);
-        $totalDeduct = $amount + $tax;
-
-        if (!$this->removeMoney($sender, $totalDeduct)) return false;
-
+        if (!$this->removeMoney($sender, $amount + $tax)) return false;
         $this->addMoney($receiver, $amount);
         return true;
     }
-
-    public function getTopBalances(int $limit): array {
-        return $this->db->getTopBalances($limit);
-    }
-
-    public function getStartingMoney(): float {
-        return $this->startingMoney;
-    }
-
-    public function getMaxMoney(): float {
-        return $this->maxMoney;
-    }
-
-    public function getPayTax(): float {
-        return $this->payTax;
-    }
-
+    public function getTopBalances(int $limit): array { return $this->db->getTopBalances($limit); }
+    public function getPayTax(): float { return $this->payTax; }
     public function saveAll(): void {
-        foreach ($this->cache as $uuid => $money) {
-            $this->db->setMoney($uuid, $money);
-        }
+        foreach ($this->cache as $uuid => $money) $this->db->setMoney($uuid, $money);
         $this->cache = [];
     }
 }
