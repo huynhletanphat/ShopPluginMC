@@ -1,11 +1,171 @@
 categories:
   blocks:
-    name: "§lVật liệu"
+    name: "§lVật liệu xây dựng"
     icon: "stone"
     items:
-      - id: "stone"
-        buy: 5
-        sell: 1
-      - id: "dirt"
-        buy: 1
-        sell: 0
+      - id: "stone" ; buy: 5 ; sell: 1
+      - id: "cobblestone" ; buy: 5 ; sell: 1
+      - id: "dirt" ; buy: 2 ; sell: 0
+      - id: "grass_block" ; buy: 3 ; sell: 1
+      - id: "sand" ; buy: 3 ; sell: 1
+      - id: "gravel" ; buy: 3 ; sell: 1
+      - id: "oak_log" ; buy: 8 ; sell: 2
+      - id: "spruce_log" ; buy: 8 ; sell: 2
+      - id: "birch_log" ; buy: 8 ; sell: 2
+      - id: "jungle_log" ; buy: 8 ; sell: 2
+      - id: "acacia_log" ; buy: 8 ; sell: 2
+      - id: "dark_oak_log" ; buy: 8 ; sell: 2
+      - id: "mangrove_log" ; buy: 8 ; sell: 2
+      - id: "cherry_log" ; buy: 8 ; sell: 2
+      - id: "bamboo_block" ; buy: 10 ; sell: 3
+      - id: "glass" ; buy: 10 ; sell: 3
+      - id: "brick" ; buy: 15 ; sell: 5
+      - id: "concrete" ; buy: 12 ; sell: 4
+      - id: "obsidian" ; buy: 30 ; sell: 10
+      - id: "ice" ; buy: 20 ; sell: 6
+  ores:
+    name: "§lKhoáng sản"
+    icon: "diamond"
+    items:
+      - id: "coal" ; buy: 5 ; sell: 2
+      - id: "iron_ingot" ; buy: 50 ; sell: 15
+      - id: "gold_ingot" ; buy: 80 ; sell: 25
+      - id: "diamond" ; buy: 200 ; sell: 60
+      - id: "emerald" ; buy: 150 ; sell: 50
+      - id: "lapis_lazuli" ; buy: 10 ; sell: 3
+      - id: "redstone" ; buy: 10 ; sell: 3
+      - id: "nether_quartz" ; buy: 20 ; sell: 6
+      - id: "netherite_scrap" ; buy: 500 ; sell: 0
+      - id: "netherite_ingot" ; buy: 2000 ; sell: 0
+  tools:
+    name: "§lDụng cụ"
+    icon: "diamond_pickaxe"
+    items:
+      - id: "wooden_pickaxe" ; buy: 20 ; sell: 5
+      - id: "stone_pickaxe" ; buy: 40 ; sell: 10
+      - id: "iron_pickaxe" ; buy: 250 ; sell: 60
+      - id: "diamond_pickaxe" ; buy: 800 ; sell: 200
+      - id: "netherite_pickaxe" ; buy: 5000 ; sell: 0
+      - id: "wooden_axe" ; buy: 20 ; sell: 5
+      - id: "stone_axe" ; buy: 40 ; sell: 10
+      - id: "iron_axe" ; buy: 250 ; sell: 60
+      - id: "diamond_axe" ; buy: 800 ; sell: 200
+      - id: "netherite_axe" ; buy: 5000 ; sell: 0
+      - id: "wooden_shovel" ; buy: 15 ; sell: 4
+      - id: "stone_shovel" ; buy: 30 ; sell: 8
+      - id: "iron_shovel" ; buy: 200 ; sell: 50
+      - id: "diamond_shovel" ; buy: 600 ; sell: 150
+      - id: "netherite_shovel" ; buy: 4000 ; sell: 0
+      - id: "wooden_hoe" ; buy: 15 ; sell: 4
+      - id: "stone_hoe" ; buy: 30 ; sell: 8
+      - id: "iron_hoe" ; buy: 200 ; sell: 50
+      - id: "diamond_hoe" ; buy: 600 ; sell: 150
+      - id: "netherite_hoe" ; buy: 4000 ; sell: 0
+      - id: "shears" ; buy: 50 ; sell: 15
+      - id: "flint_and_steel" ; buy: 30 ; sell: 8
+      - id: "fishing_rod" ; buy: 100 ; sell: 30
+      - id: "carrot_on_a_stick" ; buy: 80 ; sell: 20
+      - id: "warped_fungus_on_a_stick" ; buy: 80 ; sell: 20
+  weapons:
+    name: "§lVũ khí"
+    icon: "diamond_sword"
+    items:
+      - id: "wooden_sword" ; buy: 20 ; sell: 5
+      - id: "stone_sword" ; buy: 40 ; sell: 10
+      - id: "iron_sword" ; buy: 300 ; sell: 80
+      - id: "diamond_sword" ; buy: 900 ; sell: 250
+      - id: "netherite_sword" ; buy: 6000 ; sell: 0
+      - id: "bow" ; buy: 150 ; sell: 40
+      - id: "crossbow" ; buy: 200 ; sell: 60
+      - id: "trident" ; buy: 1500 ; sell: 0
+      - id: "mace" ; buy: 5000 ; sell: 0
+      - id: "arrow" ; buy: 2 ; sell: 1
+      - id: "shield" ; buy: 200 ; sell: 60
+  armor:
+    name: "§lGiáp"
+    icon: "diamond_chestplate"
+    items:
+      - id: "leather_helmet" ; buy: 50 ; sell: 15
+      - id: "leather_chestplate" ; buy: 80 ; sell: 25
+      - id: "leather_leggings" ; buy: 70 ; sell: 20
+      - id: "leather_boots" ; buy: 40 ; sell: 12
+      - id: "chainmail_helmet" ; buy: 100 ; sell: 30
+      - id: "chainmail_chestplate" ; buy: 150 ; sell: 45
+      - id: "chainmail_leggings" ; buy: 130 ; sell: 40
+      - id: "chainmail_boots" ; buy: 80 ; sell: 25
+      - id: "iron_helmet" ; buy: 300 ; sell: 90
+      - id: "iron_chestplate" ; buy: 500 ; sell: 150
+      - id: "iron_leggings" ; buy: 400 ; sell: 120
+      - id: "iron_boots" ; buy: 250 ; sell: 75
+      - id: "diamond_helmet" ; buy: 1500 ; sell: 450
+      - id: "diamond_chestplate" ; buy: 2500 ; sell: 750
+      - id: "diamond_leggings" ; buy: 2000 ; sell: 600
+      - id: "diamond_boots" ; buy: 1200 ; sell: 360
+      - id: "netherite_helmet" ; buy: 8000 ; sell: 0
+      - id: "netherite_chestplate" ; buy: 12000 ; sell: 0
+      - id: "netherite_leggings" ; buy: 10000 ; sell: 0
+      - id: "netherite_boots" ; buy: 7000 ; sell: 0
+      - id: "turtle_helmet" ; buy: 200 ; sell: 60
+      - id: "elytra" ; buy: 5000 ; sell: 0
+  food:
+    name: "§lThức ăn"
+    icon: "cooked_beef"
+    items:
+      - id: "apple" ; buy: 5 ; sell: 2
+      - id: "bread" ; buy: 8 ; sell: 3
+      - id: "cooked_beef" ; buy: 15 ; sell: 5
+      - id: "cooked_porkchop" ; buy: 15 ; sell: 5
+      - id: "cooked_chicken" ; buy: 12 ; sell: 4
+      - id: "cooked_mutton" ; buy: 12 ; sell: 4
+      - id: "cooked_rabbit" ; buy: 12 ; sell: 4
+      - id: "cooked_cod" ; buy: 12 ; sell: 4
+      - id: "cooked_salmon" ; buy: 15 ; sell: 5
+      - id: "golden_apple" ; buy: 200 ; sell: 60
+      - id: "enchanted_golden_apple" ; buy: 2000 ; sell: 0
+      - id: "golden_carrot" ; buy: 50 ; sell: 15
+      - id: "cake" ; buy: 30 ; sell: 10
+      - id: "pumpkin_pie" ; buy: 20 ; sell: 6
+      - id: "cookie" ; buy: 2 ; sell: 1
+  enchanted_books:
+    name: "§lSách phép"
+    icon: "enchanted_book"
+    items:
+      - id: "enchanted_book" ; buy: 1500 ; sell: 0 ; name: "Sharpness V" ; enchants: { sharpness: 5 }
+      - id: "enchanted_book" ; buy: 1200 ; sell: 0 ; name: "Efficiency V" ; enchants: { efficiency: 5 }
+      - id: "enchanted_book" ; buy: 2000 ; sell: 0 ; name: "Fortune III" ; enchants: { fortune: 3 }
+      - id: "enchanted_book" ; buy: 1800 ; sell: 0 ; name: "Silk Touch" ; enchants: { silk_touch: 1 }
+      - id: "enchanted_book" ; buy: 2500 ; sell: 0 ; name: "Mending" ; enchants: { mending: 1 }
+      - id: "enchanted_book" ; buy: 1000 ; sell: 0 ; name: "Unbreaking III" ; enchants: { unbreaking: 3 }
+      - id: "enchanted_book" ; buy: 1500 ; sell: 0 ; name: "Protection IV" ; enchants: { protection: 4 }
+      - id: "enchanted_book" ; buy: 1500 ; sell: 0 ; name: "Feather Falling IV" ; enchants: { feather_falling: 4 }
+      - id: "enchanted_book" ; buy: 1000 ; sell: 0 ; name: "Power V" ; enchants: { power: 5 }
+      - id: "enchanted_book" ; buy: 1000 ; sell: 0 ; name: "Infinity" ; enchants: { infinity: 1 }
+      - id: "enchanted_book" ; buy: 800 ; sell: 0 ; name: "Looting III" ; enchants: { looting: 3 }
+      - id: "enchanted_book" ; buy: 800 ; sell: 0 ; name: "Fire Aspect II" ; enchants: { fire_aspect: 2 }
+  new_1_21:
+    name: "§lĐồ mới 1.21"
+    icon: "crafter"
+    items:
+      - id: "crafter" ; buy: 300 ; sell: 90
+      - id: "copper_bulb" ; buy: 50 ; sell: 15
+      - id: "trial_key" ; buy: 500 ; sell: 150
+      - id: "ominous_trial_key" ; buy: 1000 ; sell: 300
+      - id: "breeze_rod" ; buy: 200 ; sell: 60
+      - id: "armadillo_scute" ; buy: 100 ; sell: 30
+      - id: "wolf_armor" ; buy: 150 ; sell: 50
+  misc:
+    name: "§lLinh tinh"
+    icon: "ender_pearl"
+    items:
+      - id: "ender_pearl" ; buy: 80 ; sell: 25
+      - id: "blaze_rod" ; buy: 100 ; sell: 30
+      - id: "slime_ball" ; buy: 30 ; sell: 10
+      - id: "gunpowder" ; buy: 20 ; sell: 6
+      - id: "bone" ; buy: 10 ; sell: 3
+      - id: "string" ; buy: 5 ; sell: 2
+      - id: "feather" ; buy: 5 ; sell: 2
+      - id: "leather" ; buy: 20 ; sell: 6
+      - id: "experience_bottle" ; buy: 100 ; sell: 30
+      - id: "name_tag" ; buy: 50 ; sell: 15
+      - id: "saddle" ; buy: 200 ; sell: 60
+      - id: "lead" ; buy: 40 ; sell: 12
