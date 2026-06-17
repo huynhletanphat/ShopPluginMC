@@ -2,9 +2,8 @@ name: EconomyShop
 version: 1.0.0
 api: 5.0.0
 main: EconomyShop\Main
-description: Hệ thống shop kinh tế dạng rương cho MCPE 1.21
+description: Hệ thống shop kinh tế
 author: Phat bel
-website: https://github.com/huynhletanphat
 commands:
   shop:
     description: Mở cửa hàng
