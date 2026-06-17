@@ -6,22 +6,22 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\Server;
 class BaltopCommand extends Command {
-    private EconomyManager $economy;
-    private int $limit;
-    public function __construct(EconomyManager $economy, int $limit = 10) {
-        parent::__construct("baltop", "Xem bảng xếp hạng giàu có", "/baltop");
+    private EconomyManager $e;
+    private int $l;
+    public function __construct(EconomyManager $e, int $l=10) {
+        parent::__construct("baltop", "Bảng xếp hạng", "/baltop");
         $this->setPermission("economyshop.use");
-        $this->economy = $economy; $this->limit = $limit;
+        $this->e = $e; $this->l = $l;
     }
-    public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
-        $top = $this->economy->getTopBalances($this->limit);
-        $sender->sendMessage("§6===== Bảng xếp hạng giàu có =====");
-        if (empty($top)) { $sender->sendMessage("§7Chưa có dữ liệu."); return true; }
-        $i = 1;
-        foreach ($top as $row) {
-            $p = Server::getInstance()->getPlayerByRawUUID($row["uuid"]);
-            $name = $p ? $p->getName() : substr($row["uuid"], 0, 8) . "...";
-            $sender->sendMessage("§e$i. §f$name: §a" . number_format((float)$row["money"], 0, '.', ',') . " xu");
+    public function execute(CommandSender $s, string $l, array $a): bool {
+        $top = $this->e->getTopBalances($this->l);
+        $s->sendMessage("§6===== Top giàu =====");
+        if (empty($top)) { $s->sendMessage("§7Trống"); return true; }
+        $i=1;
+        foreach ($top as $r) {
+            $p = Server::getInstance()->getPlayerByRawUUID($r["uuid"]);
+            $n = $p ? $p->getName() : substr($r["uuid"],0,8);
+            $s->sendMessage("§e$i. §f$n: §a".number_format((float)$r["money"],0,'.',',')." xu");
             $i++;
         }
         return true;

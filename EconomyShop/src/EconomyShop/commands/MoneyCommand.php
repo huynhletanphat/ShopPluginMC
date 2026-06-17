@@ -6,15 +6,15 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 class MoneyCommand extends Command {
-    private EconomyManager $economy;
-    public function __construct(EconomyManager $economy) {
-        parent::__construct("money", "Xem số dư của bạn", "/money", ["balance", "bal"]);
+    private EconomyManager $e;
+    public function __construct(EconomyManager $e) {
+        parent::__construct("money", "Xem số dư", "/money", ["balance","bal"]);
         $this->setPermission("economyshop.use");
-        $this->economy = $economy;
+        $this->e = $e;
     }
-    public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
-        if (!$sender instanceof Player) { $sender->sendMessage("Chỉ người chơi mới sử dụng lệnh này."); return true; }
-        $sender->sendMessage("§aSố dư của bạn: §e" . number_format($this->economy->getMoney($sender), 0, '.', ',') . " §axu");
+    public function execute(CommandSender $s, string $l, array $a): bool {
+        if (!$s instanceof Player) { $s->sendMessage("Chỉ người chơi!"); return true; }
+        $s->sendMessage("§aSố dư: §e".number_format($this->e->getMoney($s),0,'.',',')." §axu");
         return true;
     }
 }

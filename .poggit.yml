@@ -1,0 +1,8 @@
+projects:
+  EconomyShop:
+    path: ""
+    model: virion
+    type: library
+    libs:
+      - src/EconomyShop/database/EconomyDatabase.php
+      - src/EconomyShop/economy/EconomyManager.php

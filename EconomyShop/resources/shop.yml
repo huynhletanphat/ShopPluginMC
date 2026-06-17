@@ -1,0 +1,11 @@
+categories:
+  blocks:
+    name: "§lVật liệu"
+    icon: "stone"
+    items:
+      - id: "stone"
+        buy: 5
+        sell: 1
+      - id: "dirt"
+        buy: 1
+        sell: 0

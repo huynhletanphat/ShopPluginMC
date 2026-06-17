@@ -9,9 +9,6 @@ commands:
   shop:
     description: Mở cửa hàng
     permission: economyshop.use
-  shopadmin:
-    description: Quản lý shop
-    permission: economyshop.admin
 permissions:
   economyshop.use:
     default: true
